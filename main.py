@@ -28,7 +28,7 @@ class Window(tk.Tk):
 #===============================
 
 #建立logo========================
-        logoImage = Image.open('pic1.jpg')
+        logoImage = Image.open('picture/pic1.jpg')
         resizeImage = logoImage.resize((700, 190), Image.LANCZOS)
         self.logoTkimage = ImageTk.PhotoImage(resizeImage)
         logoLabel = ttk.Label(mainFrame, image=self.logoTkimage)
