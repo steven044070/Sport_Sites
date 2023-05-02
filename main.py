@@ -81,9 +81,9 @@ class Window(tk.Tk):
 #建立bottomframe===========================
         now = datetime.datetime.now()
         nowString = now.strftime("%Y-%m-%d %H:%M:%S")
-        self.bottomFrame = ttk.LabelFrame(self,text=f"中山區-{nowString}")
+        self.bottomFrame = ttk.LabelFrame(mainFrame, text=f"中山區-{nowString}")
         self.bottomFrame.pack()
-
+        
         #建立treeview
         columns = ('#1','#2','#3','#4','#5')
         self.tree = ttk.Treeview(self.bottomFrame, columns=columns,show='headings')
@@ -132,6 +132,12 @@ class Window(tk.Tk):
 
 #建立點選radiobutton的事件====================
     def radio_Event(self):
+
+        now = datetime.datetime.now()
+        nowString = now.strftime("%Y-%m-%d %H:%M:%S")
+        area_name = self.radioStringVar.get()
+        self.bottomFrame.config(text=f"{area_name}-{nowString}")
+
         for item in self.tree.get_children():
             self.tree.delete(item)
 
